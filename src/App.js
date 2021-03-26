@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import theme from './theme';
@@ -7,9 +8,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div>
-        App Placeholder
-      </div>
+      <Switch>
+        <Route path="/" exact>
+          Home
+        </Route>
+        <Route path="/search">
+          Search
+        </Route>
+      </Switch>
     </ThemeProvider>
   );
 }
